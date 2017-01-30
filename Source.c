@@ -2,20 +2,24 @@
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	MessageBox(NULL,"ereborlugimli","LOTR",MB_OK);
+	MessageBoxA(NULL,"ereborlugimli","LOTR",MB_OK);
 	return 0;
 }
 
 /*
+MessageBoxA = ANSII
+MessageBoxW = Unicode
+MessageBox(NULL, L"Test", L"Test", MB_OK);
+
 HINSTANCE hInstance
-Programların yürütülebilir modülüne (bellekte .exe dosyası) yönlendirme
+ProgramlarÄ±n yÃ¼rÃ¼tÃ¼lebilir modÃ¼lÃ¼ne (bellekte .exe dosyasÄ±) yÃ¶nlendirme
 
 HINSTANCE hPrevInstance
-Her zaman NULLWin32 programları için.
+Her zaman NULLWin32 programlarÄ± iÃ§in.
 
 LPSTR lpCmdLine
-Komut satırı bağımsız değişkenleri tek bir dize olarak. Program adı dahil DEĞİLDİR.
+Komut satÄ±rÄ± baÄŸÄ±msÄ±z deÄŸiÅŸkenleri tek bir dize olarak. Program adÄ± dahil DEÄÄ°LDÄ°R.
 
 int nCmdShow
-Geçirilebilmektedir bir tam sayı değeri ShowWindow(). Bunu daha sonra halledeceğiz.
+GeÃ§irilebilmektedir bir tam sayÄ± deÄŸeri ShowWindow(). Bunu daha sonra halledeceÄŸiz.
 */
